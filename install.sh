@@ -1,4 +1,5 @@
-# check pkg manager
+#!/bin/bash
+# check pkg manager based on current distro
 declare -A osInfo;
 osInfo[/etc/redhat-release]=yum
 osInfo[/etc/arch-release]=pacman
@@ -28,5 +29,6 @@ if [ $pkgMngr == 'apk' ]; then
   apk update && apk add --upgrade apk-tools
 fi
 
-#pkg list
-pkgList = cat pkgs
+#compile needed packages
+git clone https://github.com/xorg62/tty-clock.git && cd tty-clock && sudo make clean install
+git clone https://github.com/dunst-project/dunst.git && cd dunst && make && sudo make install
