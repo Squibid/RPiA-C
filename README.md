@@ -4,10 +4,9 @@ A calender/alarm made to run on a raspberry pi using unorthodox methods.This rea
 ### <details open><summary>Todo</summary>
   
   ```
-  make sure git is installed before cloning repos
-  add dunst scripts for alarms
+  setup dwm config file 
   add sound/sound application for alarms
-  setup dwm
+  add dunst scripts for alarms
   setup script autostart upon turning on machine
   ```
   
