@@ -11,3 +11,5 @@ A calender/alarm made to run on a raspberry pi using unorthodox methods.This rea
   ```
   
 </details>
+
+backend config file made with configparser(python)? frontend html maybe?
