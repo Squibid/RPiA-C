@@ -29,3 +29,13 @@ git clone -b gaps https://github.com/Airblader/i3.git && cd i3 && sudo make inst
 #move essential files
 cp config ~/.config/i3/
 cp picom.conf ~/.config/
+cp alarm.service /etc/systemd/system/
+
+#enable script on startup
+read -p "would you like to set the alarm clock to start every time the computer is turned on? (y)es (n)o " enable
+if [ enable == 'y' ]; then
+  sudo systemctl enable alarm.service
+read -p "would you like to start the alarm clock right now? (y)es (n)o " start
+if [ start == 'y' ]; then
+  sudo systemctl start alarm.service
+fi
