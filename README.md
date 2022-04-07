@@ -6,7 +6,7 @@ A calender/alarm made to run on a raspberry pi using unorthodox methods.This rea
   ```
   add sound/sound application for alarms
   add dunst scripts for alarms
-  setup script autostart upon turning on machine
+  add way to make/configure unlimited alarms & add events 
   ```
   
 </details>
