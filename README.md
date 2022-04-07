@@ -4,7 +4,7 @@ A calender/alarm made to run on a raspberry pi using unorthodox methods.This rea
 ### <details open><summary>Todo</summary>
   
   ```
-  setup dwm config file 
+  setup i3 config file 
   add sound/sound application for alarms
   add dunst scripts for alarms
   setup script autostart upon turning on machine
