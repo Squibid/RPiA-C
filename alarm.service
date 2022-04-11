@@ -1,0 +1,8 @@
+[Unit]
+Description=Alarm clock/Calender application
+
+[Service]
+ExecStart=/bin/bash/ ~/ #add name of file to be executed here
+
+[Install]
+WantedBy=multi-user.target
