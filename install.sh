@@ -22,14 +22,19 @@ else:
   exit
 fi
 
+#install python packages
+pip install playsound
+pip install dbus-python
+pip install audioread
+
 #compile needed packages
 git clone https://github.com/xorg62/tty-clock.git && cd tty-clock && sudo make clean install
 git clone -b gaps https://github.com/Airblader/i3.git && cd i3 && sudo make install
 
 #move essential files
-cp config ~/.config/i3/
-cp picom.conf ~/.config/
-cp alarm.service /etc/systemd/system/
+cp -r install-files/config ~/.config/i3/
+cp -r install-files/picom.conf ~/.config/
+sudo cp -r install-files/alarm.service /etc/systemd/system/
 
 #enable script on startup
 read -p "would you like to set the alarm clock to start every time the computer is turned on? (y)es (n)o " enable
