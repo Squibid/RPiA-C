@@ -16,7 +16,6 @@ def durationDetector(length):
 with audioread.audio_open(alarmName) as f:
     totalsec = f.duration
     notificationTime=((round(totalsec)*snoozeTimes)+(snoozeSleep*(snoozeTimes-1)))*1000
-    print(notificationTime)
 
 item = "org.freedesktop.Notifications"
 notfy_intf = dbus.Interface(
@@ -35,5 +34,3 @@ def alarmRing():
             time.sleep(snoozeSleep)
     except:
         print('')
-
-alarmRing()
