@@ -15,7 +15,7 @@ def durationDetector(length):
     return seconds
 with audioread.audio_open(alarmName) as f:
     totalsec = f.duration
-    notificationTime=int((totalsec*snoozeTimes)+(snoozeSleep*(snoozeTimes-1))*1000)
+    notificationTime=((round(totalsec)*snoozeTimes)+(snoozeSleep*(snoozeTimes-1)))*1000
     print(notificationTime)
 
 item = "org.freedesktop.Notifications"
@@ -31,7 +31,7 @@ def alarmRing():
     try:
         notification()
         for i in range(snoozeTimes):
-            playsound('beep.mp3')
+            playsound(alarmName)
             time.sleep(snoozeSleep)
     except:
         print('')
