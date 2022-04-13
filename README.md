@@ -1,5 +1,5 @@
 # RPiA-C (Raspberry Pi Alarm-Calender)
-### Very WIP
+### Very WIP still untested
 A calender/alarm made to run on a raspberry pi using unorthodox methods. This really could run on anything but it is written to work on a Raspberry Pi.
 
 ### <details open><summary>Todo</summary>
