@@ -1,21 +1,26 @@
-from playsound import playsound
+import pygame
 import time
 import dbus
-import audioread
+import audioread 
 
 snoozeTimes=5 #amount of times to snooze (including initial run)
 snoozeSleep=2 #stored in seconds (time between runs)
-
-notificationName='bean'
-notificationDefinition='cheese'
-alarmName='beep.mp3'
+alarmVolume=0.9 #alarm volume
+pygame.init() #start pygame
+pygame.mixer.init() 
+alarmName = pygame.mixer.Sound('beep.mp3') #sets alarm name
+alarmName.set_volume(alarmVolume) #sets the volume based on the above variable
 
 def durationDetector(length):
     seconds = length
     return seconds
 with audioread.audio_open(alarmName) as f:
     totalsec = f.duration
-    notificationTime=((round(totalsec)*snoozeTimes)+(snoozeSleep*(snoozeTimes-1)))*1000
+
+#alarm clock notification variables
+notificationName='bean'
+notificationDefinition='cheese'
+notificationTime=((round(totalsec)*snoozeTimes)+(snoozeSleep*(snoozeTimes-1)))*1000
 
 item = "org.freedesktop.Notifications"
 notfy_intf = dbus.Interface(
@@ -30,7 +35,7 @@ def alarmRing():
     try:
         notification()
         for i in range(snoozeTimes):
-            playsound(alarmName)
+            alarmName.play()
             time.sleep(snoozeSleep)
     except:
         print('')
