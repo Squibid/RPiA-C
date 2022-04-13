@@ -23,7 +23,7 @@ else:
 fi
 
 #install python packages
-pip install playsound
+pip install pygame
 pip install dbus-python
 pip install audioread
 
